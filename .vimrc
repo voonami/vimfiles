@@ -90,6 +90,9 @@ nnoremap <c-l> <c-w>l
 " Change to previous buffer
 nnoremap <leader><leader> <c-^>
 
+" Use system clipboard
+set clipboard=unnamed
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -136,3 +139,4 @@ set statusline+=%=
 set statusline+=\[%c\:%l\/%L\]
 " Percentage complete
 set statusline+=\ \ %P
+
