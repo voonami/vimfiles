@@ -29,7 +29,7 @@ set cmdheight=1
 set switchbuf=useopen
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
-set t_ti= t_te=
+" set t_ti= t_te=
 set scrolloff=3
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -51,9 +51,8 @@ let maplocalleader="\\"
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:set t_Co=256 " 256 colors
-:set background=dark
-:color satori
+set background=dark
+colorscheme solarized
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " KEY MAPPINGS 
