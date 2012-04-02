@@ -27,6 +27,8 @@ set ignorecase smartcase
 set cursorline
 set cmdheight=1
 set switchbuf=useopen
+" Add tab name to top of window
+set showtabline=2
 " Prevent Vim from clobbering the scrollback buffer. See
 " http://www.shallowsky.com/linux/noaltscreen.html
 " set t_ti= t_te=
@@ -119,7 +121,7 @@ augroup filetype_ruby
 	autocmd FileType ruby nnoremap <buffer> <localleader>c I#
 
 	" reformat entire file on read/write
-	autocmd BufWrite,BufRead *.rb :normal gg=G
+  " autocmd BufWrite,BufRead *.rb :normal gg=G
 	
 augroup END
 
