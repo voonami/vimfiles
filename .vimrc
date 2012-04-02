@@ -125,6 +125,8 @@ augroup filetype_ruby
 	" reformat entire file on read/write
   " autocmd BufWrite,BufRead *.rb :normal gg=G
 	
+  " remove traling whitespace
+  autocmd BufWritePre *.rb :%s/\s\+$//e
 augroup END
 
 augroup filetype_html
