@@ -98,6 +98,9 @@ nnoremap <leader><leader> <c-^>
 " Use system clipboard
 set clipboard=unnamed
 
+" Command-T Key Bindings
+let g:CommandTCancelMap=['<ESC>','<C-c>']
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
