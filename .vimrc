@@ -101,6 +101,8 @@ set clipboard=unnamed
 " Command-T Key Bindings
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 
+" Mapping for unobtrusive editing
+map <Leader>w :noautocmd w<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
