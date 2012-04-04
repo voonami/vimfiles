@@ -100,6 +100,7 @@ set clipboard=unnamed
 
 " Command-T Key Bindings
 let g:CommandTCancelMap=['<ESC>','<C-c>']
+let g:CommandTAcceptSelectionSplitMap=['<C-CR>','<C-s>']
 
 " Mapping for unobtrusive editing
 map <Leader>w :noautocmd w<cr>
@@ -141,6 +142,8 @@ augroup filetype_html
 	" autocmd BufWrite,BufRead *.haml :normal gg=G
 augroup END
 
+" Expand %% to current dir
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Statusline
 " [RO] full file name modified
@@ -152,3 +155,11 @@ set statusline+=\[%c\:%l\/%L\]
 " Percentage complete
 set statusline+=\ \ %P
 
+" The following is taken from  https://www.destroyallsoftware.com/file-navigation-in-vim.html
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
