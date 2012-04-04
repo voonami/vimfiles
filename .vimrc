@@ -117,7 +117,7 @@ augroup filetype_js
 	autocmd FileType javascript setlocal number
 	" Comment line of code
 	autocmd FileType javascript nnoremap <buffer> <localleader>c I//
-	autocmd BufWrite,BufRead *.js :normal gg=G
+	" autocmd BufWrite,BufRead *.js :normal gg=G
 augroup END
 
 " Ruby autocmd's
@@ -137,8 +137,8 @@ augroup END
 
 augroup filetype_html
 	autocmd!
-	autocmd BufWrite,BufRead *.html :normal gg=G
-	autocmd BufWrite,BufRead *.haml :normal gg=G
+	" autocmd BufWrite,BufRead *.html :normal gg=G
+	" autocmd BufWrite,BufRead *.haml :normal gg=G
 augroup END
 
 
