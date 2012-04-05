@@ -93,10 +93,19 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " Change to previous buffer
-nnoremap <leader><leader> <c-^>
+nnoremap <leader>m <c-^>
 
 " Use system clipboard
 set clipboard=unnamed
+
+" CTRL+Space does auto complete
+inoremap <Nul> <C-n>
+
+" Insert a hash rocket with <c-l>
+imap <c-l> <space>=><space>
+
+" Convert and line to a block start
+imap <c-d> <end><space>do<cr>
 
 " Command-T Key Bindings
 let g:CommandTCancelMap=['<ESC>','<C-c>']
@@ -119,6 +128,8 @@ augroup filetype_js
 	" Comment line of code
 	autocmd FileType javascript nnoremap <buffer> <localleader>c I//
 	" autocmd BufWrite,BufRead *.js :normal gg=G
+  " remove traling whitespace
+  autocmd BufWritePre *.js :%s/\s\+$//e
 augroup END
 
 " Ruby autocmd's
@@ -163,3 +174,30 @@ set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'))
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PROMOTE VARIABLE TO RSPEC LET
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! PromoteToLet()
+  :normal! dd
+  " :exec '?^\s*it\>'
+  :normal! P
+  :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+  :normal ==
+endfunction
+:command! PromoteToLet :call PromoteToLet()
+:map <leader>p :PromoteToLet<cr>
