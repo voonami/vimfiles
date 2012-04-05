@@ -126,10 +126,17 @@ augroup filetype_js
 	autocmd!
 	autocmd FileType javascript setlocal number
 	" Comment line of code
-	autocmd FileType javascript nnoremap <buffer> <localleader>c I//
+	autocmd FileType javascript nnoremap <buffer> <localleader>c 0i//<esc>
 	" autocmd BufWrite,BufRead *.js :normal gg=G
   " remove traling whitespace
   autocmd BufWritePre *.js :%s/\s\+$//e
+augroup END
+
+augroup filetype_php
+  autocmd!
+  autocmd FileType php setlocal number
+  " Comment line of code
+  autocmd FileType php nnoremap <buffer> <localleader>c 0i//<esc>
 augroup END
 
 " Ruby autocmd's
@@ -138,7 +145,7 @@ augroup filetype_ruby
 	autocmd FileType ruby setlocal number
 
 	" Comment line of code
-	autocmd FileType ruby nnoremap <buffer> <localleader>c I#
+	autocmd FileType ruby nnoremap <buffer> <localleader>c 0i#<esc>
 
 	" reformat entire file on read/write
   " autocmd BufWrite,BufRead *.rb :normal gg=G
