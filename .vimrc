@@ -101,6 +101,14 @@ set clipboard=unnamed
 " CTRL+Space does auto complete
 inoremap <Nul> <C-n>
 
+" Single Char insert from normal mode.
+function! RepeatChar(char, count)
+  " TODO: Needs a friendly prompt
+  return repeat(a:char, a:count)
+endfunction
+nnoremap <Space> :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <Leader><Space> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
 
@@ -130,6 +138,8 @@ augroup filetype_js
 	" autocmd BufWrite,BufRead *.js :normal gg=G
   " remove traling whitespace
   autocmd BufWritePre *.js :%s/\s\+$//e
+  " Stop folding already
+  let javascript_fold=1
 augroup END
 
 augroup filetype_php
