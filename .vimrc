@@ -187,7 +187,7 @@ set statusline+=\[%c\:%l\/%L\]
 set statusline+=\ \ %P
 
 " The following is taken from  https://www.destroyallsoftware.com/file-navigation-in-vim.html
-set winwidth=84
+set winwidth=88
 " We have to have a winheight bigger than we want to set winminheight. But if
 " we set winheight to be huge before winminheight, the winminheight set will
 " fail.
