@@ -173,6 +173,11 @@ augroup filetype_html
 	" autocmd BufWrite,BufRead *.haml :normal gg=G
 augroup END
 
+augroup filetype_jade
+	autocmd!
+	autocmd FileType jade setlocal number
+augroup END
+
 " Expand %% to current dir
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
