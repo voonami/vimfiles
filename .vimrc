@@ -101,6 +101,9 @@ set clipboard=unnamed
 " CTRL+Space does auto complete
 inoremap <Nul> <C-n>
 
+" Apply the . command to all selected lines in visual mode
+vnoremap <Leader>. :normal.<cr>
+
 " Single Char insert from normal mode.
 function! RepeatChar(char, count)
   " TODO: Needs a friendly prompt
