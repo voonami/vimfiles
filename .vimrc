@@ -106,14 +106,6 @@ inoremap <Nul> <C-n>
 " Apply the . command to all selected lines in visual mode
 vnoremap <Leader>. :normal.<cr>
 
-" Single Char insert from normal mode.
-function! RepeatChar(char, count)
-  " TODO: Needs a friendly prompt
-  return repeat(a:char, a:count)
-endfunction
-nnoremap <Space> :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
-nnoremap <Leader><Space> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
-
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
 
