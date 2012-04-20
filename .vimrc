@@ -22,6 +22,8 @@ set laststatus=2
 set showmatch
 set incsearch
 set hlsearch
+" Turn on mouse because with integrated clipboard this is nice again.
+set mouse=a
 " make searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
 " highlight current line
@@ -118,19 +120,34 @@ imap <c-l> <space>=><space>
 " Convert and line to a block start
 imap <c-d> <end><space>do<cr>
 
+" Open rails routes in a split window
+map <leader>gr :topleft :split config/routes.rb<cr>
+" Open the Gemfile in a split window
+map <leader>gg :topleft 100 :split Gemfile<cr>
+
 " Command-T Key Bindings
 let g:CommandTCancelMap=['<ESC>','<C-c>']
 let g:CommandTAcceptSelectionSplitMap=['<C-CR>','<C-s>']
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
+map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>T :CommandTFlush<cr>\|:CommandT %%<cr>
 
-" Mapping for unobtrusive editing
+" Mapping for unobtrusive editing (IE: save without removing whitespace)
 map <Leader>w :noautocmd w<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Left> <nop>
-map <Right> <nop>
-map <Up> <nop>
-map <Down> <nop>
+map <Left> :echo "hjlk is better!!"<cr>
+map <Right> :echo "hjlk is better!!"<cr>
+map <Up> :echo "hjlk is better!!"<cr>
+map <Down> :echo "hjlk is better!!"<cr>
 
 " Javascript autocmd's
 augroup filetype_js
@@ -226,3 +243,18 @@ function! PromoteToLet()
 endfunction
 :command! PromoteToLet :call PromoteToLet()
 :map <leader>p :PromoteToLet<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
