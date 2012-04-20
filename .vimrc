@@ -144,10 +144,10 @@ map <Leader>w :noautocmd w<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ARROW KEYS ARE UNACCEPTABLE
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <Left> :echo "hjlk is better!!"<cr>
-map <Right> :echo "hjlk is better!!"<cr>
-map <Up> :echo "hjlk is better!!"<cr>
-map <Down> :echo "hjlk is better!!"<cr>
+map <Left> :echo "IMPOSSIBRU!!"<cr>
+map <Right> :echo "IMPOSSIBRU!!"<cr>
+map <Up> :echo "IMPOSSIBRU!!"<cr>
+map <Down> :echo "IMPOSSIBRU!!"<cr>
 
 " Javascript autocmd's
 augroup filetype_js
