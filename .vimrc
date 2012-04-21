@@ -187,6 +187,11 @@ augroup filetype_jade
 	autocmd FileType jade setlocal number
 augroup END
 
+augroup filetype_haml
+	autocmd!
+	autocmd FileType haml setlocal number
+augroup END
+
 " Expand %% to current dir
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
