@@ -63,7 +63,7 @@ colorscheme solarized
 " KEY MAPPINGS 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " remove search highlight
-nnoremap <CR> :nohlsearch<CR>
+nnoremap <leader><CR> :nohlsearch<CR>
 " move current line down one line
 nnoremap - ddp
 " move current line up one line
