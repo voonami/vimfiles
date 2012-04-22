@@ -153,8 +153,6 @@ augroup filetype_js
 	" autocmd BufWrite,BufRead *.js :normal gg=G
   " remove traling whitespace
   autocmd BufWritePre *.js :%s/\s\+$//e
-  " Stop folding already
-  let javascript_fold=0
 augroup END
 
 augroup filetype_php
