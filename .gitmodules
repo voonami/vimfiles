@@ -16,9 +16,6 @@
 [submodule ".vim/bundle/vim-endwise"]
 	path = .vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise
-[submodule ".vim/bundle/vim-javascript-syntax"]
-	path = .vim/bundle/vim-javascript-syntax
-	url = git://github.com/jelera/vim-javascript-syntax.git
 [submodule ".vim/bundle/vim-javascript"]
 	path = .vim/bundle/vim-javascript
 	url = git://github.com/pangloss/vim-javascript.git
