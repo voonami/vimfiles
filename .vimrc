@@ -109,6 +109,9 @@ vnoremap <Leader>. :normal.<cr>
 " Insert a hash rocket with <c-l>
 imap <c-l> <space>=><space>
 
+" Insert a javascript function
+imap <c-j> function()<space>{}<esc>i
+
 " Convert and line to a block start
 imap <c-d> <end><space>do<cr>
 
