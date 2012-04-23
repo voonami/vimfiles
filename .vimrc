@@ -147,6 +147,9 @@ map <Right> :echo "IMPOSSIBRU!!"<cr>
 map <Up> :echo "IMPOSSIBRU!!"<cr>
 map <Down> :echo "IMPOSSIBRU!!"<cr>
 
+" File types to hide in the file browser
+let g:netrw_list_hide= '.*\.swp$'
+
 " Javascript autocmd's
 augroup filetype_js
 	autocmd!
