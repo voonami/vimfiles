@@ -115,6 +115,9 @@ imap <c-j> function()<space>{}<esc>i
 " Convert and line to a block start
 imap <c-d> <end><space>do<cr>
 
+" Open the editor in its own left split
+map <leader>e :Vexplore<cr>
+
 " Open rails routes in a split window
 map <leader>gr :topleft :split config/routes.rb<cr>
 " Open the Gemfile in a split window
