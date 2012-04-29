@@ -207,6 +207,8 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 set statusline=%R%F\ %m
 " right align everything else
 set statusline+=%=
+" Show current branch
+set statusline+=%{fugitive#statusline()}
 " [Column:line:Total Lines]
 set statusline+=\[%c\:%l\/%L\]
 " Percentage complete
