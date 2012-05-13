@@ -67,6 +67,7 @@ nnoremap <leader><CR> :nohlsearch<CR>
 " delete current line - changed to c-x because c-d is a system mapping.
 nnoremap <c-x> dd
 inoremap <c-x> <esc>ddi
+inoremap <c-X> <esc>cc
 
 " upcase current word in insert mode
 inoremap <c-u> <esc>viwUi
