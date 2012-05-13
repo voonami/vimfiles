@@ -64,13 +64,9 @@ colorscheme solarized
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " remove search highlight
 nnoremap <leader><CR> :nohlsearch<CR>
-" move current line down one line
-nnoremap - ddp
-" move current line up one line
-nnoremap _ ddkP
-" delete current line
-nnoremap <c-d> dd
-inoremap <c-d> <esc>ddi
+" delete current line - changed to c-x because c-d is a system mapping.
+nnoremap <c-x> dd
+inoremap <c-x> <esc>ddi
 
 " upcase current word in insert mode
 inoremap <c-u> <esc>viwUi
@@ -131,6 +127,7 @@ map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
 map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
 map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
 map <leader>ga :CommandTFlush<cr>\|:CommandT app/assets<cr>
+map <leader>gp :CommandTFlush<cr>\|:CommandT app/presenters<cr>
 map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gt :CommandTFlush<cr>\|:CommandTTag<cr>
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
